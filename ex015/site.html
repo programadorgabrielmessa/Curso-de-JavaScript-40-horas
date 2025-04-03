@@ -12,19 +12,27 @@
     </header>
     <section>
         <div id="dados">
+            <!-- Correção: Adicionado 'for' para ligar ao input -->
             <label for="txti">Início:</label>
             <input type="number" id="txti" aria-label="Início da contagem">
+
+            <!-- Correção: Adicionado 'for' para ligar ao input -->
             <label for="txtf">Fim:</label>
             <input type="number" id="txtf" aria-label="Fim da contagem">
+
+            <!-- Correção: Adicionado 'for' para ligar ao input -->
             <label for="txtp">Passo:</label>
             <input type="number" id="txtp" aria-label="Passo da contagem">
-            <button id="contarBtn">Contar!</button>
-            <button id="resetBtn">Resetar</button>
+
+            <!-- Correção: Adicionado type="button" -->
+            <button id="contarBtn" type="button">Contar!</button>
+            <!-- Correção: Adicionado type="button" -->
+            <button id="resetBtn" type="button">Resetar</button>
         </div>
         <div id="res">Preparando a contagem...</div>
     </section>
     <footer>
-        <p>&copy; CursoemVideo</p>
+        <p>© CursoemVideo</p>
     </footer>
     <script src="javascript.js"></script>
 </body>

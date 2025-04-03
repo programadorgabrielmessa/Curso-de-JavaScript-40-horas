@@ -1,28 +1,74 @@
+/* Guardando a informação original:
+body { background: rgb(70, 142, 236); font: normal 15pt Arial; }
+header { color: white; text-align: center; }
+section { background: white; border-radius: 10px; padding: 15px; width: 500px; margin: auto; box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.363); }
+div { text-align: center; }
+footer { color: white; text-align: center; font-style: italic; }
+*/
+
 body {
     background: rgb(70, 142, 236);
-    font: normal 15pt Arial;
+    /* Sugestão: usar px ou rem em vez de pt */
+    font-size: 16px; /* Equivalente aproximado de 12pt, 15pt é um pouco grande para corpo de texto (aprox 20px). Ajuste conforme necessário. */
+    font-family: Arial, sans-serif; /* Adicionar fallback genérico */
+    line-height: 1.6; /* Melhora a legibilidade */
+    margin: 0; /* Remover margens padrão do body */
+    padding: 0; /* Remover preenchimentos padrão do body */
 }
 
 header {
     color: white;
     text-align: center;
+    padding: 20px 0; /* Adicionar um pouco de espaçamento vertical */
 }
 
 section {
     background: white;
     border-radius: 10px;
     padding: 15px;
-    width: 500px;
-    margin: auto;
+    width: 90%; /* Usar porcentagem para melhor responsividade inicial */
+    max-width: 500px; /* Definir largura máxima */
+    margin: 20px auto; /* Adicionar margem superior/inferior e centralizar */
     box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.363);
+    box-sizing: border-box; /* Incluir padding e border na largura total */
 }
 
+/* Se a intenção é centralizar o conteúdo APENAS em divs específicas,
+   use uma classe no HTML (<div class="conteudo-centralizado">)
+   e mude o seletor abaixo para .conteudo-centralizado */
 div {
     text-align: center;
+    margin-bottom: 15px; /* Adicionar espaço abaixo das divs (se contiverem texto/imagem) */
 }
+
+/* --- CONTROLE DE IMAGEM --- */
+/* Assumindo que as imagens que você quer controlar estão dentro da <section> */
+section img {
+    max-width: 100%;  /* Garante que a imagem não ultrapasse a largura do contêiner (section) */
+    height: auto;     /* Mantém a proporção da imagem ao ajustar a largura */
+    display: block;   /* Facilita a centralização com margens e remove espaço extra abaixo */
+    margin-left: auto;  /* Centraliza a imagem horizontalmente (junto com margin-right) */
+    margin-right: auto; /* Centraliza a imagem horizontalmente */
+    margin-top: 10px;   /* Adiciona um espaço acima da imagem */
+    margin-bottom: 10px; /* Adiciona um espaço abaixo da imagem */
+    border-radius: 5px; /* Opcional: Adiciona bordas arredondadas à imagem */
+}
+
+/* Alternativa: Se quiser um tamanho fixo (ex: 250px de largura) */
+/*
+section img {
+    width: 250px;
+    height: auto;
+    display: block;
+    margin: 10px auto;
+    border-radius: 5px;
+}
+*/
 
 footer {
     color: white;
     text-align: center;
     font-style: italic;
+    margin-top: 30px; /* Adicionar espaço acima do rodapé */
+    padding: 10px 0;
 }

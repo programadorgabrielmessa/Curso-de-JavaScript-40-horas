@@ -11,6 +11,7 @@ body {
     flex-direction: column;
     align-items: center;
     min-height: 100vh;
+    color: #333; /* Adicionado cor base para melhor contraste */
 }
 
 header {
@@ -35,40 +36,61 @@ section {
 #dados {
     display: flex;
     flex-wrap: wrap;
-    gap: 1rem;
-    justify-content: center;
+    gap: 1rem; /* Espaçamento entre itens */
+    align-items: center; /* Alinha itens verticalmente */
+    margin-bottom: 1.5rem; /* Espaço antes do resultado */
 }
 
-label {
+#dados label {
     font-weight: bold;
+    margin-right: 0.5rem; /* Espaço depois do label */
+    flex-shrink: 0; /* Evita que o label encolha */
 }
 
-input, button {
-    padding: 0.5rem;
+#dados input[type="number"] {
+    padding: 0.6rem;
     border-radius: 5px;
     border: 1px solid #ddd;
+    flex-grow: 1; /* Permite que inputs cresçam */
+    min-width: 60px; /* Largura mínima */
 }
 
-button {
+#dados button {
+    padding: 0.7rem 1rem;
+    border-radius: 5px;
+    border: none; /* Removida borda padrão */
     background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
     color: white;
+    font-weight: bold;
     cursor: pointer;
-    transition: transform 0.3s ease;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    flex-basis: calc(50% - 0.5rem); /* Faz botões ocuparem quase metade com gap */
+    text-align: center;
 }
 
-button:hover {
-    transform: scale(1.05);
+#dados button:hover {
+    transform: scale(1.03);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 #res {
-    margin-top: 1rem;
-    font-weight: bold;
-    text-align: center;
+    margin-top: 1.5rem;
+    font-weight: normal; /* Mudado para normal, destaque nos números */
+    text-align: left; /* Alinhado à esquerda para melhor leitura da sequência */
+    line-height: 1.6; /* Melhor espaçamento entre linhas */
+    word-wrap: break-word; /* Quebra palavras longas se necessário */
     transition: all 0.3s ease;
 }
 
+#res span { /* Estilo para os números e setas */
+    font-weight: bold;
+    margin-right: 0.3em; /* Pequeno espaço após a seta */
+}
+
 footer {
-    margin-top: auto;
+    margin-top: auto; /* Empurra para baixo */
     padding: 1rem;
+    text-align: center;
     color: #666;
+    width: 100%;
 }
